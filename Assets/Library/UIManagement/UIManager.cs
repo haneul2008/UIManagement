@@ -12,7 +12,7 @@ namespace Library
         public class UIManager : MonoBehaviour
         {
             public Dictionary<UiType, UIMono> UiPairs = new Dictionary<UiType, UIMono>();
-            private List<bool> _uiInstantiated = new List<bool>();
+            public List<bool> UiInstantiated { get; private set; } = new List<bool>();
 
             private static UIManager _instance = null;
             public Canvas standardCanvas;
@@ -47,9 +47,9 @@ namespace Library
 
                 if (ui == null) return;
 
-                if (!_uiInstantiated[(int)uiType] && active)
+                if (!UiInstantiated[(int)uiType] && active)
                 {
-                    _uiInstantiated[(int)uiType] = true;
+                    UiInstantiated[(int)uiType] = true;
 
                     UIMono uiObject = Instantiate(ui, standardCanvas.transform);
                     uiObject.gameObject.name = UiPairs[uiType].gameObject.name;
@@ -92,7 +92,7 @@ namespace Library
                 for(int i = 0; i < Uis.Count; i++)
                 {
                     UiPairs.Add((UiType)i, Uis[i].ui);
-                    _uiInstantiated.Add(false);
+                    UiInstantiated.Add(false);
                 }
             }
 
