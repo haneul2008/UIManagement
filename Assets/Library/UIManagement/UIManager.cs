@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
@@ -41,11 +42,11 @@ namespace Library
                 SetPairs();
             }
 
-            public void ActiveUI(UiType uiType, bool active, int siblingIndex = -1)
+            public UIMono ActiveUI(UiType uiType, bool active, int siblingIndex = -1)
             {
                 UIMono ui = UiPairs[uiType];
 
-                if (ui == null) return;
+                if (ui == null) return null;
 
                 if (!UiInstantiated[(int)uiType] && active)
                 {
@@ -65,6 +66,8 @@ namespace Library
                     ui.OnActiveTrue();
                 else
                     ui.OnActiveFalse();
+
+                return ui;
             }
 
             #region 에디터에서
@@ -101,9 +104,33 @@ namespace Library
                 }
             }
 
-            public void GenerateUiList()
+            public void GenerateUiListInSO()
             {
                 List<UiElementSO> list = CreatAssetDatabase();
+
+                Uis = list;
+            }
+
+            public void GenerateUiListInGO()
+            {
+                if(standardCanvas == null)
+                {
+                    Debug.LogWarning("Standard Canvas is null");
+                    return;
+                }
+
+                List<UIMono> uis = standardCanvas.GetComponentsInChildren<UIMono>().ToList();
+
+                List<UiElementSO> list = new List<UiElementSO>();
+
+                foreach(var ui in uis)
+                {
+                    UiElementSO uiElementSO = ScriptableObject.CreateInstance<UiElementSO>();
+                    uiElementSO.name = ui.name;
+                    uiElementSO.ui = ui;
+
+                    list.Add(uiElementSO);
+                }
 
                 Uis = list;
             }
@@ -132,6 +159,7 @@ namespace Library
             {
                 GenerateUiElementsEnumFile("");
             }
+
             #endregion
         }
     }

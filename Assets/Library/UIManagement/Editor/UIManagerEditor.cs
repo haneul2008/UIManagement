@@ -22,7 +22,8 @@ public class UIManagerEditor : Editor
         // Add your UI content here
 
         // root.Q<Label>("title").text = "Custom Property Drawer";
-        root.Q<Button>("btn_generateUi").clickable.clicked += () => UIManager.Instance.GenerateUiList();
+        root.Q<Button>("btn_generateUiSO").clickable.clicked += () => UIManager.Instance.GenerateUiListInSO();
+        root.Q<Button>("btn_generateUiGO").clickable.clicked += () => UIManager.Instance.GenerateUiListInGO();
         root.Q<Button>("btn_generateEnum").clickable.clicked += () => UIManager.Instance.GenerateEnum();
         root.Q<Button>("btn_clearEnum").clickable.clicked += () => UIManager.Instance.ClearEnum();
         
