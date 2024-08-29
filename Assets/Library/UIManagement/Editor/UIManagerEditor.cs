@@ -23,7 +23,8 @@ public class UIManagerEditor : Editor
 
         // root.Q<Label>("title").text = "Custom Property Drawer";
         root.Q<Button>("btn_generateUi").clickable.clicked += () => UIManager.Instance.GenerateUiList();
-        root.Q<Button>("btn_generateEnum").clickable.clicked += () => UIManager.Instance.GenerateUiElementsEnumFile();
+        root.Q<Button>("btn_generateEnum").clickable.clicked += () => UIManager.Instance.GenerateEnum();
+        root.Q<Button>("btn_clearEnum").clickable.clicked += () => UIManager.Instance.ClearEnum();
         
         return root;
     }

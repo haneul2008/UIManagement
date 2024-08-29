@@ -68,7 +68,7 @@ namespace Library
             }
 
             #region 에디터에서
-            public void GenerateUiElementsEnumFile()
+            public void GenerateEnum()
             {
                 StringBuilder codeBuilder = new StringBuilder();
                 foreach (UiElementSO item in Uis)
@@ -77,7 +77,12 @@ namespace Library
                     codeBuilder.Append(",");
                 }
 
-                string code = string.Format(CodeFormat.UITypeFormat, codeBuilder.ToString());
+                GenerateUiElementsEnumFile(codeBuilder.ToString());
+            }
+
+            private void GenerateUiElementsEnumFile(string codeBuilder)
+            {
+                string code = string.Format(CodeFormat.UITypeFormat, codeBuilder);
                 string path = $"{Application.dataPath}/Library/UIManagement/Uitype.cs";
                 Debug.Log(path);
                 File.WriteAllText(path, code);
@@ -121,6 +126,11 @@ namespace Library
                 }
 
                 return list;
+            }
+
+            public void ClearEnum()
+            {
+                GenerateUiElementsEnumFile("");
             }
             #endregion
         }

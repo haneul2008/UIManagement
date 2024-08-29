@@ -5,7 +5,7 @@ namespace Library
     {
         public enum UiType
         {
-            Image1,Image2,
+            
         }
     }
 }

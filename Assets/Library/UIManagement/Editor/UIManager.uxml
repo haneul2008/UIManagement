@@ -5,5 +5,6 @@
     <ui:Label tabindex="-1" text="UiManagement" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 24px;" />
     <ui:Button text="GenerateUiElements" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_generateUi" style="background-color: rgb(55, 197, 100); color: rgb(0, 0, 0);" />
     <ui:Button text="GenerateEnum" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_generateEnum" style="background-color: rgb(181, 199, 73); color: rgb(0, 0, 0);" />
+    <ui:Button text="ClearEnum" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_clearEnum" style="background-color: rgb(73, 198, 199); color: rgb(0, 0, 0);" />
     <uie:ObjectField label=" StandradCanvas" binding-path="standardCanvas" focusable="true" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); -unity-text-outline-color: rgba(0, 0, 0, 0);" />
 </ui:UXML>
