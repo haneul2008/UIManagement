@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/CustomTemplate/Template/NKUSSTemplate.uss?fileID=7433441132597879392&amp;guid=6a25e899d15eb994b85241dddfd90559&amp;type=3#NKUSSTemplate" />
+    <Style src="project://database/Assets/CustomTemplate/Template/OdinUSSTemplate.uss?fileID=7433441132597879392&amp;guid=8ee2195f99d140f43ae4fd9b456629f9&amp;type=3#OdinUSSTemplate" />
+    <Style src="project://database/Assets/CustomTemplate/Template/ToggleUSSTemplate.uss?fileID=7433441132597879392&amp;guid=2e3e5c2da0c15f741a97092246c349e6&amp;type=3#ToggleUSSTemplate" />
+    <ui:Label tabindex="-1" text="UiManagement" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 24px;" />
+    <ui:Button text="GenerateUiElements" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_generateUi" style="background-color: rgb(55, 197, 100); color: rgb(0, 0, 0);" />
+    <ui:Button text="GenerateEnum" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_generateEnum" style="background-color: rgb(181, 199, 73); color: rgb(0, 0, 0);" />
+    <uie:ObjectField label=" StandradCanvas" binding-path="standardCanvas" focusable="true" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); -unity-text-outline-color: rgba(0, 0, 0, 0);" />
+</ui:UXML>
